@@ -1,0 +1,36 @@
+<mat-toolbar color="primary">
+    <div fxHide.gt-xs
+         fxLayout="center">
+        <mat-icon (click)="sidenavToggled.emit()"
+                  class="cursor-pointer">
+            menu
+        </mat-icon>
+    </div>
+    <div>
+        <a routerLink="/">NG Fitness Tracker</a>
+    </div>
+    <div fxFlex
+         fxLayout
+         fxHide.xs
+         fxLayoutAlign="flex-end">
+        <ul class="navigation-items"
+            fxLayoutGap="10px"
+            fxLayout>
+            <li *ngIf="!(isAuthenticated$ | async)">
+                <a routerLink="/account/signup">Sign up</a>
+            </li>
+            <li *ngIf="!(isAuthenticated$ | async)">
+                <a routerLink="/account/login">Login</a>
+            </li>
+            <li *ngIf="isAuthenticated$ | async">
+                <a routerLink="/training">Training</a>
+            </li>
+            <li *ngIf="isAuthenticated$ | async">
+                <a class="cursor-pointer"
+                   (click)="authService.logout()">
+                    Logout
+                </a>
+            </li>
+        </ul>
+    </div>
+</mat-toolbar>

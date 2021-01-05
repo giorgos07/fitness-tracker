@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "fitness-tracker-57dda": {
+      "hosting": {
+        "fitness-tracker": [
+          "fitness-tracker-57dda"
+        ]
+      }
+    }
+  }
+}
